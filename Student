@@ -1,0 +1,10 @@
+if (platform == 'iOS') {
+if (version == 4 || version == 5 || version == 6 || version == 7) {
+link = 'sms:' + serviceNumber + ';body=' + body;
+} else {
+link = 'sms:' + serviceNumber + '&body=' + body;
+}
+} else {
+link = 'sms:' + serviceNumber + '?body=' + encodeURIComponent(body);
+}
+window.location.href = link;
